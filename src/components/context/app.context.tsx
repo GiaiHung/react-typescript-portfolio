@@ -15,7 +15,7 @@ type TProps = {
 
 export const AppContextProvider = (props: TProps) => {
     const [theme, setTheme] = useState<ThemeContextType>(() => {
-        const initialTheme = localStorage.getItem("theme") as ThemeContextType || "light";
+        const initialTheme = (localStorage?.getItem("theme") ?? "dark") as ThemeContextType;
         return initialTheme;
     });
 
